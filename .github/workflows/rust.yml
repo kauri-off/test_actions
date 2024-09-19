@@ -23,4 +23,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: test_actions
-        path: target/x86_64-pc-windows-gnu/release/test_actions
+        path: target/x86_64-pc-windows-gnu/release/test_actions.exe
