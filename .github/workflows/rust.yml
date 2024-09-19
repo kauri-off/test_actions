@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Указываем Windows как среду выполнения
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -19,10 +19,15 @@ jobs:
     - name: Set up Rust
       uses: actions-rs/toolchain@v1
       with:
-        toolchain: stable  # Или любой другой таргет, например, nightly
+        toolchain: stable
 
     - name: Build project
       run: cargo build --release
 
     - name: Run tests
       run: cargo test
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: test_actions
+        path: target/release/test_actions.exe
