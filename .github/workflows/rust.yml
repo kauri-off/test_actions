@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install MinGW
-      run: apt-get install -y mingw-w64 && rustup target add x86_64-pc-windows-gnu
+      run: sudo apt-get update && sudo apt-get install -y mingw-w64 && rustup target add x86_64-pc-windows-gnu
     - name: Build
       run: cargo build --release --target x86_64-pc-windows-gnu
